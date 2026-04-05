@@ -191,3 +191,6 @@ int compareBST(struct node *t1, struct node *t2){
     }
     return((t1 && t2) && (t1->data == t2->data) && compareBST(t1->left, t2->left) && compareBST(t1->right, t2->right));
 }
+
+
+// **********************Graph**************************//
