@@ -34,14 +34,14 @@ int main(){
         // adjacency matrix
         adj[u][v] = 1;
 
-        // adjacency list (use p)
+        // adjacency list
         struct node *p = (struct node*)malloc(sizeof(struct node));
         p->data = v;
         p->next = list[u];
         list[u] = p;
     }
 
-    // display adjacency list (use temp)
+    // display adjacency list
     printf("\nAdjacency List:\n");
     for(i = 0; i < n; i++){
         printf("%d -> ", i);
@@ -62,7 +62,7 @@ int main(){
         printf("\n");
     }
 
-    // calculate degrees
+    // calculate degree
     printf("\nVertex\tIndegree\tOutdegree\tTotalDegree\n");
     for(i = 0; i < n; i++){
         int indegree = 0, outdegree = 0;
