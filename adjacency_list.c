@@ -5,7 +5,7 @@
 #include<stdlib.h>
 
 struct node {
-    int v;
+    int data;
     struct node *next;
 };
 
@@ -39,7 +39,7 @@ int main(){
 
         // adjacency list
         struct node *temp = (struct node*)malloc(sizeof(struct node));
-        temp->v = v;
+        temp->data = v;
         temp->next = list[u];
         list[u] = temp;
     }
@@ -50,7 +50,7 @@ int main(){
         printf("%d -> ", i);
         struct node *t = list[i];
         while(t){
-            printf("%d ", t->v);
+            printf("%d ", t->data);
             t = t->next;
         }
         printf("\n");
