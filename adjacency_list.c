@@ -1,6 +1,3 @@
-
-//Write a C program that accepts the vertices and edges of a graph and stores it as an adjacency list.
-//Display the adjacency matrix. Calculate indegree, outdegree and total degree of each vertex.
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -11,7 +8,7 @@ struct node {
 
 int main(){
     int adj[10][10];
-    struct node* list[10];   // adjacency list
+    struct node* list[10];
 
     int i, j, u, v, n, edges;
 
@@ -37,21 +34,21 @@ int main(){
         // adjacency matrix
         adj[u][v] = 1;
 
-        // adjacency list
-        struct node *temp = (struct node*)malloc(sizeof(struct node));
-        temp->data = v;
-        temp->next = list[u];
-        list[u] = temp;
+        // adjacency list (use p)
+        struct node *p = (struct node*)malloc(sizeof(struct node));
+        p->data = v;
+        p->next = list[u];
+        list[u] = p;
     }
 
-    // display adjacency list
+    // display adjacency list (use temp)
     printf("\nAdjacency List:\n");
     for(i = 0; i < n; i++){
         printf("%d -> ", i);
-        struct node *t = list[i];
-        while(t){
-            printf("%d ", t->data);
-            t = t->next;
+        struct node *temp = list[i];
+        while(temp){
+            printf("%d ", temp->data);
+            temp = temp->next;
         }
         printf("\n");
     }
