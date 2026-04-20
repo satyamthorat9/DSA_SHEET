@@ -71,9 +71,7 @@ int main(){
             outdegree += adj[i][j];
             indegree += adj[j][i];
         }
-
         printf("%d\t%d\t\t%d\t\t%d\n",i,indegree,outdegree,indegree+outdegree);
     }
-
     return 0;
 }
