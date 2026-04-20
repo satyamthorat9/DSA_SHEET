@@ -129,6 +129,7 @@
 
 #include<stdio.h>
 int adj[20][20], visited[20], n, i;
+
 void dfs(int v){
     printf("%d  ", v);
     visited[v] = 1;
@@ -142,6 +143,7 @@ int main(){
     int i, j, u, v, start, edges;
     printf("How many vertices:\n");
     scanf("%d", &n);
+
     for(i = 0; i < n; i++){
         for(j = 0; j < n; j++){
             adj[i][j] = 0;
