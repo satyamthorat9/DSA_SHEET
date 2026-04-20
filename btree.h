@@ -147,8 +147,9 @@ int countNode(struct node *root){
 //count Leaf node
 int countLeaf(struct node *root){
     static int c = 0;
-    if(root != 0){
+    if(root != NULL){
         countLeaf(root->left);
+
         if(root->left == NULL && root->right == NULL)
             c++;
         countLeaf(root->right);
