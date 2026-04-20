@@ -6,7 +6,7 @@ int main(){
     struct node *root = NULL,*t1 = NULL, *t2 = NULL;
     do{
         printf("\n\tMenu\n");
-        printf("1.create\n2.Inorder Traversing\n3.Preorder Traversing\n4.Postorder Traversing\n5.Search\n6.Insert\n7.Count Total Nodes\n8.Count Leaf nodes\n9.Copy Tree\n10.Mirror image\n11.create t1\n12.create t2\n15.Exit\n");
+        printf("1.create\n2.Inorder Traversing\n3.Preorder Traversing\n4.Postorder Traversing\n5.Search\n6.Insert\n7.Count Total Nodes\n8.Count Leaf nodes\n9.Copy Tree\n10.Mirror image\n11.create t1\n12.create t2\n13.CompareBST\n15.Exit\n");
         printf("Enter  Your choice :");
         scanf("%d",&ch);
         switch(ch){
@@ -60,5 +60,3 @@ int main(){
     }while(q!=1);
     return 0;
 }
-
-
