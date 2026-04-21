@@ -46,6 +46,7 @@ int main(){
     for(i = 0; i < n; i++){
         printf("%d -> ", i);
         struct node *temp = list[i];
+
         while(temp){
             printf("%d ", temp->data);
             temp = temp->next;
