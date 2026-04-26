@@ -2,8 +2,10 @@
 int main(){
     int i, j, n, indegree[10], flag[10];
     int a[10][10], count = 0;
+
     printf("How many vertices :");
     scanf("%d",&n);
+
     printf("Enter the adjacency matrix :\n");
     for(i = 0; i < n; i++){
         for(j = 0; j<n; j++){
@@ -24,6 +26,7 @@ int main(){
     for(i = 0; i < n; i++)
         for(j = 0; j < n; j++)
             indegree[i] = indegree[i]+a[j][i];
+            
     printf("The Topological Order is :\n");
     while(count < n){
         for(int k = 0; k < n; k++){

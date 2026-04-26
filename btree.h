@@ -233,3 +233,25 @@ BEGIN
     RETURN total;
 END;
 $$ LANGUAGE plpgsql;
+
+
+//slip 30
+CREATE OR REPLACE PROCEDURE sum_avg(n INT)
+LANGUAGE plpgsql AS $$
+DECLARE
+    i INT;
+    total INT := 0;
+    avg_val NUMERIC;
+BEGIN
+    -- Calculate sum
+    FOR i IN 1..n LOOP
+        total := total + i;
+    END LOOP;
+
+    -- Calculate average
+    avg_val := total::NUMERIC / n;
+
+    -- Display result
+    RAISE NOTICE 'Sum = %, Average = %', total, avg_val;
+END;
+$$;
