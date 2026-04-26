@@ -219,3 +219,17 @@ BEGIN
     END LOOP;
 END;
 $$ LANGUAGE plpgsql;
+
+//slip 2
+CREATE OR REPLACE FUNCTION total_persons(a_name VARCHAR)
+RETURNS INT AS $$
+DECLARE
+    total INT;
+BEGIN
+    SELECT COUNT(*) INTO total
+    FROM person p JOIN area a ON p.aname = a.aname
+    WHERE a.aname = a_name;
+
+    RETURN total;
+END;
+$$ LANGUAGE plpgsql;
