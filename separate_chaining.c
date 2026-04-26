@@ -120,7 +120,7 @@ void insert (){
     int i, key;
     printf("Enter the value to insert :");
     scanf("%d",&key);
-
+    
     i = key % 11;
 
     p = (struct node *)malloc(sizeof(struct node));

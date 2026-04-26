@@ -195,3 +195,27 @@ int compareBST(struct node *t1, struct node *t2){
 
 
 // **********************Graph**************************//
+
+
+
+
+
+
+
+
+// slip 6 DBMS
+CREATE OR REPLACE FUNCTION drivers_above_50(depot VARCHAR)
+RETURNS VOID AS $$
+DECLARE
+    rec RECORD;
+BEGIN
+    FOR rec IN
+        SELECT d.driver_name, d.d_age
+        FROM driver d
+        JOIN bus b ON d.driver_no = b.bus_no
+        WHERE b.depot_name = depot AND d.d_age > 50
+    LOOP
+        RAISE NOTICE 'Name: %, Age: %', rec.driver_name, rec.d_age;
+    END LOOP;
+END;
+$$ LANGUAGE plpgsql;
